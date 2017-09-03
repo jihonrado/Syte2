@@ -602,7 +602,7 @@ function _parseActivity(activity) {
     };
 
     if (activity.repo) {
-      newActivity.description += '<a href="' + activity.repo.url + '" target="_blank">' + activity.repo.name + '</a> ';
+      newActivity.description += '<a href="https://github.com/' + activity.repo.name + '" target="_blank">' + activity.repo.name + '</a> ';
     }
 
     return newActivity;
