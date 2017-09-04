@@ -186,7 +186,7 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 body {
-  background-color: #202a2f;
+  background-color: #222;
   font-family: "Lato", "Helvetica Neue", "Arial", sans-serif;
   font-size: 14px;
   line-height: 24px;
@@ -196,7 +196,7 @@ body {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 ::selection {
-  background: #79d4d5;
+  background: #17c7de;
   color: #fff;
   text-shadow: none;
 }
@@ -206,7 +206,7 @@ b {
   color: #fff;
 }
 a {
-  color: #79d4d5;
+  color: #17c7de;
   text-decoration: none;
   cursor: pointer;
 }
@@ -216,7 +216,7 @@ p {
 blockquote {
   margin: 10px;
   padding: 0 0 0 15px;
-  border-left: 3px solid #79d4d5;
+  border-left: 3px solid #17c7de;
 }
 em {
   font-style: italic;
@@ -274,7 +274,7 @@ h4,
   position: relative;
   overflow: visible;
   vertical-align: top;
-  color: #79d4d5;
+  color: #17c7de;
   font-family: 'icons';
   font-size: 26px;
   line-height: 30px;
@@ -282,37 +282,43 @@ h4,
   speak: none;
 }
 .icon.twitter:before {
-  content: "\e90a";
+  content: "\e90e";
 }
 .icon.facebook:before {
   content: "\e909";
 }
 .icon.tumblr:before {
-  content: "\e908";
+  content: "\e913";
 }
 .icon.spotify:before {
   content: "\e907";
 }
 .icon.instagram:before {
-  content: "\e906";
+  content: "\e90c";
 }
 .icon.foursquare:before {
-  content: "\e905";
+  content: "\e915";
 }
 .icon.dribbble:before {
   content: "\e904";
 }
 .icon.youtube:before {
-  content: "\e903";
+  content: "\e90f";
 }
 .icon.linkedin:before {
-  content: "\e902";
+  content: "\e914";
 }
 .icon.github:before {
-  content: "\e901";
+  content: "\e912";
 }
 .icon.flickr:before {
   content: "\e900";
+}
+.icon.speakerdeck:before {
+  content: "\e920";
+}
+.icon.contact:before {
+  content: "\e923";
 }
 .icon.play-video {
   height: 50px;
@@ -466,7 +472,7 @@ h4,
   font-weight: 400;
 }
 .modal a {
-  color: #00B4B9;
+  color: #1f92de;
 }
 .modal-overlay {
   margin: 0 auto;
@@ -913,6 +919,7 @@ h4,
   transform: scale(1.1);
 }
 .main-header .picture {
+  float: left;
   width: 50px;
   height: 50px;
   -webkit-border-radius: 25px;
@@ -928,10 +935,10 @@ h4,
   height: 50px;
 }
 .main-header h1 {
-  display: inline-block;
-  vertical-align: top;
-  line-height: 50px;
   text-transform: uppercase;
+  position: relative;
+}
+.main-header h2 {
   position: relative;
 }
 .main-nav {
@@ -959,9 +966,6 @@ h4,
   -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   transform: scale(1.1);
-}
-.main-nav .icon.twitter {
-  vertical-align: middle;
 }
 .main-nav .icon.instagram {
   font-size: 23px;
@@ -1114,25 +1118,34 @@ h4,
   display: inline-block;
   padding: 10px 20px;
   margin-bottom: 20px;
-  background: #182125;
+  background: #1b2a2f;
   color: #fff;
   -webkit-transition: all 320ms ease-out;
   transition: all 320ms ease-out;
 }
 .button:hover {
-  background: #79d4d5;
-  color: #202a2f;
+  background: #17c7de;
+  color: #222;
   -webkit-transform: scale(1.04);
   -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   transform: scale(1.04);
+}
+@media (max-width: 1400px) {
+  .main-header {
+    width: 25%;
+  }
 }
 @media (max-width: 1035px) {
   .main-header {
     width: 50px;
     height: auto;
   }
-  .main-header h1 {
+  .main-header .picture {
+    float: none;
+  }
+  .main-header h1,
+  .main-header h2 {
     display: none;
   }
   .main-header .about-link {
@@ -1164,6 +1177,14 @@ h4,
   .main-header h1 {
     display: block;
     text-align: center;
+    line-height: 50px;
+    vertical-align: top;
+  }
+  .main-header h2 {
+    display: none;
+  }
+  .main-header h2 {
+    display: none;
   }
   .main-header .picture {
     display: none;
@@ -1274,7 +1295,7 @@ h4,
 .stream .stream-line {
   height: 100%;
   width: 4px;
-  background-color: #263435;
+  background-color: #223035;
   position: fixed;
   z-index: 0;
   top: 0;
@@ -1300,15 +1321,15 @@ h4,
 .stream h3 {
   float: left;
   width: 100px;
-  color: #5d7679;
+  color: #5f7881;
   margin-top: 11px;
 }
 .stream .small-icon {
   position: absolute;
   z-index: 1;
-  color: #5d7679;
+  color: #5f7881;
   font-size: 14px;
-  background-color: #263435;
+  background-color: #223035;
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -1389,7 +1410,7 @@ h4,
   position: absolute;
   width: 48px;
   height: 48px;
-  background-color: #182125;
+  background-color: #1b2a2f;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   text-align: center;
@@ -1689,7 +1710,7 @@ h4,
   -webkit-border-radius: 4px;
   border-radius: 4px;
   overflow: hidden;
-  background-color: #182125;
+  background-color: #1b2a2f;
   margin-bottom: 30px;
 }
 .twitter-page .user .stats:before,
@@ -1710,7 +1731,7 @@ h4,
 }
 .twitter-page .user .stats strong {
   font-weight: 300;
-  color: #79d4d5;
+  color: #17c7de;
   display: block;
   font-size: 16px;
   line-height: 26px;
@@ -1761,7 +1782,7 @@ h4,
   margin-bottom: 10px;
 }
 .twitter-page .tweets li {
-  border-top: 1px solid #263435;
+  border-top: 1px solid #223035;
   padding: 20px 0 10px 0;
   position: relative;
 }
@@ -1825,7 +1846,7 @@ h4,
   margin-left: 5px;
 }
 .twitter-page .tweets .date {
-  color: #5d7679;
+  color: #5f7881;
   font-size: 12px;
   margin-left: 10px;
 }
@@ -1996,7 +2017,7 @@ h4,
   -webkit-border-radius: 4px;
   border-radius: 4px;
   overflow: hidden;
-  background-color: #182125;
+  background-color: #1b2a2f;
   margin-left: 70px;
   width: 300px;
 }
@@ -2018,7 +2039,7 @@ h4,
 }
 .dribbble-page .user .stats strong {
   font-weight: 300;
-  color: #79d4d5;
+  color: #17c7de;
   display: block;
   font-size: 16px;
   line-height: 26px;
@@ -2245,7 +2266,7 @@ h4,
   -webkit-border-radius: 4px;
   border-radius: 4px;
   overflow: hidden;
-  background-color: #182125;
+  background-color: #1b2a2f;
   margin-left: 70px;
   width: 300px;
 }
@@ -2267,7 +2288,7 @@ h4,
 }
 .instagram-page .user .stats strong {
   font-weight: 300;
-  color: #79d4d5;
+  color: #17c7de;
   display: block;
   font-size: 16px;
   line-height: 26px;
@@ -2529,11 +2550,11 @@ h4,
 }
 .youtube-page .user .stat {
   position: absolute;
-  left: 270px;
+  left: 300px;
   top: 153px;
 }
 .youtube-page .user .stat strong {
-  color: #79d4d5;
+  color: #17c7de;
 }
 .youtube-page .posts {
   zoom: 1;
@@ -2733,7 +2754,7 @@ h4,
   -webkit-border-radius: 4px;
   border-radius: 4px;
   overflow: hidden;
-  background-color: #182125;
+  background-color: #1b2a2f;
   margin-bottom: 30px;
 }
 .github-page .user .stats:before,
@@ -2754,13 +2775,13 @@ h4,
 }
 .github-page .user .stats strong {
   font-weight: 300;
-  color: #79d4d5;
+  color: #17c7de;
   display: block;
   font-size: 16px;
   line-height: 26px;
 }
 .github-page .repos li.repo {
-  border-top: 1px solid #263435;
+  border-top: 1px solid #223035;
   padding: 15px 0;
   position: relative;
 }
@@ -2789,7 +2810,7 @@ h4,
   display: inline-block;
   float: left;
   margin-right: 10px;
-  color: #5d7679;
+  color: #5f7881;
   font-weight: 400;
 }
 .github-page .repos .repo-stats .small-icon {
@@ -2797,7 +2818,7 @@ h4,
   line-height: 24px;
   height: 24px;
   margin-right: 5px;
-  color: #5d7679;
+  color: #5f7881;
 }
 .github-page .activities {
   float: left;
@@ -2812,7 +2833,7 @@ h4,
   margin-bottom: 10px;
 }
 .github-page .activities li {
-  border-top: 1px solid #263435;
+  border-top: 1px solid #223035;
   padding: 15px 0;
   position: relative;
 }
@@ -2826,12 +2847,12 @@ h4,
   padding: 0;
 }
 .github-page .activities .icon {
-  color: #5d7679;
+  color: #5f7881;
   position: absolute;
 }
 .github-page .activities .date {
   position: relative;
-  color: #5d7679;
+  color: #5f7881;
   font-size: 12px;
   margin-left: 40px;
   font-weight: 400;
@@ -2967,13 +2988,13 @@ h4,
 }
 .tumblr-page .post {
   padding: 40px 100px 20px 0;
-  border-top: 1px solid #263435;
+  border-top: 1px solid #223035;
 }
 .tumblr-page .post:first-child {
   border-top: 0;
 }
 .tumblr-page .date {
-  color: #5d7679;
+  color: #5f7881;
   margin-bottom: 20px;
   position: relative;
 }
@@ -3148,7 +3169,7 @@ h4,
   -webkit-border-radius: 4px;
   border-radius: 4px;
   overflow: hidden;
-  background-color: #182125;
+  background-color: #1b2a2f;
   margin-bottom: 30px;
 }
 .foursquare-page .user .stats:before,
@@ -3169,13 +3190,13 @@ h4,
 }
 .foursquare-page .user .stats strong {
   font-weight: 300;
-  color: #79d4d5;
+  color: #17c7de;
   display: block;
   font-size: 16px;
   line-height: 26px;
 }
 .foursquare-page .checkins li.checkin {
-  border-top: 1px solid #263435;
+  border-top: 1px solid #223035;
   padding: 15px 0;
   position: relative;
 }
@@ -3183,7 +3204,7 @@ h4,
   position: absolute;
   width: 48px;
   height: 48px;
-  background-color: #182125;
+  background-color: #1b2a2f;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   text-align: center;
@@ -3199,7 +3220,7 @@ h4,
   position: relative;
 }
 .foursquare-page .checkins .date {
-  color: #5d7679;
+  color: #5f7881;
   font-size: 12px;
 }
 .foursquare-page .checkins .alt {
@@ -3262,7 +3283,7 @@ h4,
   width: 100%;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  border: 5px solid #182125;
+  border: 5px solid #1b2a2f;
 }
 .foursquare-page .checkin-stats .foursquare-map .map {
   width: 100%;
@@ -3296,7 +3317,7 @@ h4,
 .foursquare-page .checkin-stats .foursquare-map .markers .circle {
   width: 4px;
   height: 4px;
-  background: #79d4d5;
+  background: #17c7de;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   margin-left: 2px;
@@ -3340,7 +3361,7 @@ h4,
 .foursquare-page .checkin-stats .foursquare-categories .category-icon {
   width: 48px;
   height: 48px;
-  background-color: #182125;
+  background-color: #1b2a2f;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   text-align: center;
@@ -3722,7 +3743,7 @@ h4,
   position: relative;
 }
 .lastfm-page .tracks li.track {
-  border-top: 1px solid #263435;
+  border-top: 1px solid #223035;
   padding: 15px 0;
   position: relative;
 }
@@ -3730,7 +3751,7 @@ h4,
   position: absolute;
   width: 48px;
   height: 48px;
-  background-color: #182125;
+  background-color: #1b2a2f;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   text-align: center;
@@ -3755,7 +3776,7 @@ h4,
   position: relative;
 }
 .lastfm-page .tracks .date {
-  color: #5d7679;
+  color: #5f7881;
   font-size: 12px;
 }
 .lastfm-page .top-stats {
