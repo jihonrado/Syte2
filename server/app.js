@@ -41,6 +41,16 @@ if (app.get('env') === 'development') {
 }
 
 if (app.get('env') === 'production') {
+    // Redirect to host without 'www'
+    app.all(/.*/, function(req, res, next) {
+        var host = req.header("host");
+        if (host.match(/^www\..*/i)) {
+            res.redirect(301, req.protocol + "://" + host.replace(/^www\./, '') + req.url);
+        } else {
+            next();
+        }
+    });
+
     // changes it to use the optimized version for production
     app.use(express.static(path.join(__dirname, '/dist')));
 
