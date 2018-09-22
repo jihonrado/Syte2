@@ -3,3 +3,7 @@ node_modules
 server/dist
 client/node_modules
 client/bower_components
+.git*
+Dockerfile
+Procfile
+Makefile
