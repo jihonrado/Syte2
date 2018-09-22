@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  namespace: jihonrado-web
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      name: web
+  template:
+    metadata:
+      labels:
+        name: web
+    spec:
+      containers:
+      - image: "eu.gcr.io/jihonrado-main/jihonrado-web:0.1.3"
+        imagePullPolicy: Always
+        name: web
+        env:
+        - name: MONGODB_URI
+          value: "mongodb://$(MONGODB_SERVICE_HOST):$(MONGODB_SERVICE_PORT)/syte"
+      terminationGracePeriodSeconds: 10
