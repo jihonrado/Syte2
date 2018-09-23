@@ -12,6 +12,6 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: mvertes/alpine-mongo
+        image: mvertes/alpine-mongo:4.0.1-0
         ports:
         - containerPort: 27017
