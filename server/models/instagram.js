@@ -207,17 +207,13 @@ exports.fetch = function(count, max_id, cb) {
           'type': 'instagram',
           'url': post.link,
           'video': post.videos && post.videos.standard_resolution ? post.videos.standard_resolution : null,
-          'picture': post.images && post.images.thumbnail ? post.images.thumbnail.url : null,
+          'picture': post.images && post.images.low_resolution ? post.images.low_resolution.url : null,
           'pictureHD':  post.images && post.images.standard_resolution ? post.images.standard_resolution.url : null,
           'likes': post.likes && post.likes.count ? post.likes.count : 0,
           'comments': post.comments && post.comments.count ? post.comments.count : 0,
           'text': post.caption && post.caption.text ? linkifyText(post.caption.text) : null,
           'user': post.user || null
         };
-
-        if (post.images && post.images.thumbnail) {
-          cleanedPost.picture = post.images.thumbnail.url.replace(/s150x150/g, 's320x320');
-        }
 
         posts.push(cleanedPost);
       }
