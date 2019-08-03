@@ -1,5 +1,5 @@
 REPO=eu.gcr.io/jihonrado-main/jihonrado-web
-VERSION=0.1.3
+VERSION=0.1.4
 
 .PHONY: image
 image:
