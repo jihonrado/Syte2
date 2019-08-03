@@ -54,14 +54,13 @@
     <script src="scripts/youtube.js"></script>
     <!-- endbuild -->
 
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-24440509-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-       ga('create', GOOGLE_ANALYTICS_KEY);
-       ga('send', 'pageview');
+      gtag('config', 'UA-24440509-3');
     </script>
 </body>
 </html>
