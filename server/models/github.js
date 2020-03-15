@@ -187,18 +187,17 @@ exports.setup = function(cb) {
 };
 
 exports.fetch = function(page, cb) {
-  var url = GITHUB_API_URL + 'users/'+
-            process.env.GITHUB_USERNAME + '/events?access_token=' +
-            process.env.GITHUB_ACCESS_TOKEN;
+  var url = GITHUB_API_URL + 'users/' + process.env.GITHUB_USERNAME + '/events';
 
   if (page) {
-    url += '&page=' + page;
+    url += '?page=' + page;
   }
 
   request({
       'url': url,
       'headers': {
-        'User-Agent': 'Syte'
+        'User-Agent': 'Syte',
+        'Authorization': process.env.GITHUB_ACCESS_TOKEN
       }
     }, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -256,14 +255,13 @@ exports.user = function(cb) {
     return;
   }
 
-  var url = GITHUB_API_URL + 'users/'+
-            process.env.GITHUB_USERNAME + '?access_token=' +
-            process.env.GITHUB_ACCESS_TOKEN;
+  var url = GITHUB_API_URL + 'users/' + process.env.GITHUB_USERNAME;
 
   request({
       'url': url,
       'headers': {
-        'User-Agent': 'Syte'
+        'User-Agent': 'Syte',
+        'Authorization': process.env.GITHUB_ACCESS_TOKEN
       }
     }, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -308,13 +306,13 @@ exports.repos = function(cb) {
   }
 
   var url = GITHUB_API_URL + 'users/'+
-            process.env.GITHUB_USERNAME + '/repos?access_token=' +
-            process.env.GITHUB_ACCESS_TOKEN + '&sort=updated';
+            process.env.GITHUB_USERNAME + '/repos?sort=updated';
 
   request({
       'url': url,
       'headers': {
-        'User-Agent': 'Syte'
+        'User-Agent': 'Syte',
+        'Authorization': process.env.GITHUB_ACCESS_TOKEN
       }
     }, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -367,13 +365,13 @@ exports.recentActivity = function(cb) {
   }
 
   var url = GITHUB_API_URL + 'users/'+
-            process.env.GITHUB_USERNAME + '/events/public?access_token=' +
-            process.env.GITHUB_ACCESS_TOKEN;
+            process.env.GITHUB_USERNAME + '/events/public';
 
   request({
       'url': url,
       'headers': {
-        'User-Agent': 'Syte'
+        'User-Agent': 'Syte',
+        'Authorization': process.env.GITHUB_ACCESS_TOKEN
       }
     }, function (error, response, body) {
     if (!error && response.statusCode == 200) {
