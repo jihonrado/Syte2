@@ -549,8 +549,7 @@ function _parseActivity(activity) {
       newActivity.description += '#' + activity.payload.pull_request.number + '</a>';
 
       if (activity.payload.comment) {
-        //newActivity.comment = activity.payload.comment.substring(0, 100);
-        newActivity.comment = markdown.toHTML(activity.payload.comment);
+        newActivity.comment = markdown.toHTML(activity.payload.comment.body.substring(0, 100) + '...');
       }
 
       return newActivity;
