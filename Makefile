@@ -1,11 +1,11 @@
-REPO=eu.gcr.io/jihonrado-main/jihonrado-web
-VERSION=0.1.4
+IMAGE_NAME=jihonrado/jihonrado.com
+VERSION=0.1.9
 
-.PHONY: image
-image:
-	docker build . -t $(REPO):$(VERSION) -t $(REPO):latest
+.PHONY: build
+build:
+	docker build . -t $(IMAGE_NAME):$(VERSION) -t $(IMAGE_NAME):latest
 
 .PHONY: push
-push: image
-	docker push $(REPO):$(VERSION)
-	docker push $(REPO):latest
+push: build
+	docker push $(IMAGE_NAME):$(VERSION)
+	docker push $(IMAGE_NAME):latest
